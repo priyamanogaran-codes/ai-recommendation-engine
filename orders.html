@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Velora | My Orders</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🛍️ Velora </h2>
+
+<ul>
+
+<li><a href="/">🏠 Home</a></li>
+
+<li class="dropdown">
+
+<a href="#">🛒 Shop ▾</a>
+
+<div class="dropdown-content">
+
+<a href="/products">Products</a>
+
+<a href="/recommendation">Recommendations</a>
+
+<a href="/wishlist">Wishlist</a>
+
+</div>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">📦 Orders ▾</a>
+
+<div class="dropdown-content">
+
+<a href="/cart">Cart</a>
+
+<a href="/orders">My Orders</a>
+
+<a href="/invoice">Invoice</a>
+
+</div>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">👤 Account ▾</a>
+
+<div class="dropdown-content">
+
+{% if "user" in session %}
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/logout">🚪 Logout</a>
+
+{% else %}
+
+<a href="/login">🔐 Login</a>
+
+{% endif %}
+
+</div>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="orders-container">
+
+<h1>📦 My Orders</h1>
+
+{% if orders %}
+
+<table>
+
+<tr>
+
+    <th>Order ID</th>
+
+    <th>Product</th>
+
+    <th>Price</th>
+
+    <th>Order Date</th>
+
+    <th>Status</th>
+
+</tr>
+
+{% for order in orders %}
+
+<tr>
+
+    <td>{{ order.OrderID }}</td>
+
+    <td>{{ order.ProductName }}</td>
+
+    <td>₹{{ order.Price }}</td>
+
+    <td>{{ order.OrderDate }}</td>
+
+    <td>
+
+        {% if order.Status == "Pending" %}
+
+            <span class="pending">🟡 Pending</span>
+
+        {% elif order.Status == "Shipped" %}
+
+            <span class="shipped">🔵 Shipped</span>
+
+        {% elif order.Status == "Delivered" %}
+
+            <span class="delivered">🟢 Delivered</span>
+
+        {% else %}
+
+            <span class="cancelled">🔴 Cancelled</span>
+
+        {% endif %}
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% else %}
+
+<div class="empty-box">
+
+<h2>No Orders Yet 📦</h2>
+
+<p>You haven't placed any orders yet.</p>
+
+<a href="/products">
+
+<button>
+
+🛍 Shop Now
+
+</button>
+
+</a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

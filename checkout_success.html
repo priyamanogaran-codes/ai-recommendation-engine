@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Order Success</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="success-box">
+
+{% if success %}
+
+<h1>✅ Order Placed Successfully!</h1>
+
+<p>Thank you for shopping with Velora AI.</p>
+
+<a href="/invoice">
+    <button>📄 View Invoice</button>
+</a>
+
+{% else %}
+
+<h1>🛒 No Order Found</h1>
+
+<p>Your cart is empty.</p>
+
+<a href="/products">
+    <button>🛍 Shop Now</button>
+</a>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

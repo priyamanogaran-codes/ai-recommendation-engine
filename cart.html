@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Velora | Shopping Cart</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🛍️ Velora </h2>
+
+<ul>
+
+<li><a href="/">🏠 Home</a></li>
+
+<li class="dropdown">
+
+<a href="#">🛒 Shop ▾</a>
+
+<div class="dropdown-content">
+
+<a href="/products">Products</a>
+
+<a href="/recommendation">Recommendations</a>
+
+<a href="/wishlist">Wishlist</a>
+
+</div>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">📦 Orders ▾</a>
+
+<div class="dropdown-content">
+
+<a href="/cart">Cart</a>
+
+<a href="/orders">My Orders</a>
+
+<a href="/invoice">Invoice</a>
+
+</div>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">👤 Account ▾</a>
+
+<div class="dropdown-content">
+
+{% if "user" in session %}
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/logout">🚪 Logout</a>
+
+{% else %}
+
+<a href="/login">🔐 Login</a>
+
+{% endif %}
+
+</div>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="cart-container">
+
+<h1>🛒 Your Shopping Cart</h1>
+
+{% if cart_items %}
+
+<div class="products">
+
+{% for product in cart_items %}
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='images/' + product.Image) }}">
+
+<h3>{{ product.ProductName }}</h3>
+
+<p>{{ product.Brand }}</p>
+
+<p>{{ product.Category }}</p>
+
+<h2>₹ {{ product.Price }}</h2>
+
+<p>⭐ {{ product.Rating }}</p>
+
+<p style="color:green;">🟢 In Stock</p>
+
+<a href="{{ url_for('remove_from_cart', product_id=product.ProductID) }}">
+
+    <button class="remove-btn">
+
+        🗑 Remove
+
+    </button>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<div class="cart-summary">
+
+<h2>Total Amount : ₹ {{ total }}</h2>
+
+<a href="{{ url_for('payment') }}">
+    <button>Proceed to Payment</button>
+</a>
+
+</div>
+
+{% else %}
+
+<div class="empty-box">
+
+<h2>🛒 Your Cart is Empty</h2>
+
+<p>
+Looks like you haven't added any products yet.
+</p>
+
+<a href="/products">
+
+<button>
+
+🛍 Continue Shopping
+
+</button>
+
+</a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Velora | About Us</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+<div class="about-container">
+
+<h1>About Velora AI</h1>
+
+<p>
+Velora  is an AI-powered e-commerce recommendation platform that helps
+customers discover products based on their preferences, budget, and ratings.
+The system uses Machine Learning algorithms to provide personalized product
+recommendations and improve the online shopping experience.
+</p>
+
+<div class="about-cards">
+
+<div class="about-card">
+
+<h2>🎯 Our Mission</h2>
+
+<p>
+To make online shopping smarter, faster, and more personalized using Artificial Intelligence.
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h2>🤖 Technologies Used</h2>
+
+<p>
+Python, Flask, HTML, CSS, JavaScript, Pandas, Scikit-learn, Logistic Regression, KNN.
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h2>👩‍💻 Developer</h2>
+
+<p>
+Developed by <b>Priya Manogaran</b> as an AI-powered E-Commerce Recommendation System project.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

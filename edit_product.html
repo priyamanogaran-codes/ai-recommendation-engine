@@ -1,0 +1,40 @@
+<h1>Edit Product</h1>
+
+<form method="POST">
+
+    <input type="text"
+           name="name"
+           value="{{ product.ProductName }}">
+
+    <input type="text"
+           name="category"
+           value="{{ product.Category }}">
+
+    <input type="text"
+           name="brand"
+           value="{{ product.Brand }}">
+
+    <input type="number"
+           name="price"
+           value="{{ product.Price }}">
+
+    <input type="number"
+           name="rating"
+           step="0.1"
+           value="{{ product.Rating }}">
+
+    <input type="number"
+           name="stock"
+           value="{{ product.Stock }}">
+
+    <input type="text"
+           name="image"
+           value="{{ product.Image }}">
+
+    <button type="submit">
+
+        💾 Update Product
+
+    </button>
+
+</form>

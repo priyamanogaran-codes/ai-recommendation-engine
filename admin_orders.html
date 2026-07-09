@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Order Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    {% include "admin_sidebar.html" %}
+
+    <div class="content">
+
+        <div class="top-bar">
+
+            <h1>📦 Order Management</h1>
+
+        </div>
+
+        <table>
+
+            <tr>
+
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Status</th>
+
+            </tr>
+
+            {% for order in orders %}
+
+            <tr>
+
+                <td>{{ order.OrderID }}</td>
+
+                <td>{{ order.ProductName }}</td>
+
+                <td>₹ {{ order.Price }}</td>
+
+                <td>{{ order.Date }}</td>
+
+                <td>
+
+<form action="/update-order-status/{{ order.OrderID }}" method="POST">
+
+    <select name="status">
+
+        <option value="Pending"
+        {% if order.Status=="Pending" %}selected{% endif %}>
+            Pending
+        </option>
+
+        <option value="Shipped"
+        {% if order.Status=="Shipped" %}selected{% endif %}>
+            Shipped
+        </option>
+
+        <option value="Delivered"
+        {% if order.Status=="Delivered" %}selected{% endif %}>
+            Delivered
+        </option>
+
+        <option value="Cancelled"
+        {% if order.Status=="Cancelled" %}selected{% endif %}>
+            Cancelled
+        </option>
+
+    </select>
+
+    <button type="submit">
+
+        Update
+
+    </button>
+
+</form>
+
+</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Velora Admin Dashboard</title>
+
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='css/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🛍️ Velora</h2>
+
+        <a href="/admin/dashboard">🏠 Dashboard</a>
+
+        <a href="/product-management">📦 Products</a>
+
+        <a href="/orders">📑 Orders</a>
+
+        <a href="/admin/users">👥 Users</a>
+
+        <a href="/admin/sales-analytics">📈 Analytics</a>
+
+        <a href="{{ url_for('admin_logout') }}">🚪 Admin Logout</a>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <h1>Welcome Admin 👋</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Products</h3>
+                <h1>{{ products }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Total Users</h3>
+                <h1>{{ users }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Total Orders</h3>
+                <h1>{{ orders }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <h1>₹ {{ revenue }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Average Rating</h3>
+                <h1>{{ average_rating }} ⭐</h1>
+            </div>
+
+            <div class="card">
+                <h3>Top Product</h3>
+                <p>{{ highest_product }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Popular Category</h3>
+                <p>{{ popular_category }}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

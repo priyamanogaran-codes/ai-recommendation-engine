@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    {% include "admin_sidebar.html" %}
+
+    <div class="content">
+
+        <div class="top-bar">
+
+            <h1>👥 User Management</h1>
+
+        </div>
+
+        <table>
+
+            <tr>
+
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+
+            </tr>
+
+            {% for user in users %}
+
+            <tr>
+
+                <td>{{ user.Username }}</td>
+
+                <td>{{ user.Email }}</td>
+
+                <td>********</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

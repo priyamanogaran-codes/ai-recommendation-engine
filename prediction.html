@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Purchase Prediction</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🛍️ Velora</h2>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+<li><a href="/products">Products</a></li>
+<li><a href="/recommendation">Recommendation</a></li>
+<li><a href="/prediction">Prediction</a></li>
+<li><a href="/login">Login</a></li>
+
+</ul>
+
+</nav>
+
+<div class="prediction-box">
+
+<h1>Purchase Prediction</h1>
+
+<form method="POST">
+
+<input type="number" name="age" placeholder="Age" required>
+
+<input type="number" name="income" placeholder="Income" required>
+
+<input type="number" name="previous" placeholder="Previous Purchases" required>
+
+<input type="number" name="time" placeholder="Time Spent" required>
+
+<button type="submit">Predict</button>
+
+</form>
+
+{% if result %}
+
+<h2>{{ result }}</h2>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

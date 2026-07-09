@@ -1,0 +1,31 @@
+ProductID,ProductName,Category,Brand,Price,Rating,Stock,Image
+1,Wireless Headphones,Electronics,Boat,4500,4.5,2,headphones.jpg
+2,Smart Watch,Electronics,Noise,4999,4.7,40,smartwatch.jpg
+3,Bluetooth Speaker,Electronics,JBL,2499,4.6,35,speaker.jpg
+4,Laptop Backpack,Accessories,Wildcraft,1430,4.4,60,backpack.jpg
+5,Running Shoes,Fashion,Nike,3999,4.8,30,running-shoes.jpg
+6,Casual Shoes,Fashion,Puma,2999,4.4,45,casual-shoes.jpg
+7,T-Shirt,Fashion,Levis,999,4.2,80,tshirt.jpg
+8,Jeans,Fashion,Levis,1999,4.5,70,jeans.jpg
+9,Sunglasses,Accessories,RayBan,5999,4.8,25,sunglasses.jpg
+10,Power Bank,Electronics,Mi,1499,4.4,50,powerbank.jpg
+11,Wireless Mouse,Electronics,Logitech,899,4.6,100,mouse.jpg
+12,Gaming Keyboard,Electronics,Redragon,2499,4.7,45,keyboard.jpg
+13,USB Pendrive,Electronics,SanDisk,699,4.5,120,pendrive.jpg
+14,External Hard Disk,Electronics,WD,4999,4.8,20,harddisk.jpg
+15,Office Chair,Furniture,GreenSoul,8999,4.7,15,chair.jpg
+16,Study Table,Furniture,HomeCentre,5999,4.4,18,table.jpg
+17,Coffee Mug,Home,Milton,399,4.3,150,mug.jpg
+18,Water Bottle,Home,Cello,599,4.5,100,bottle.jpg
+19,Air Fryer,Home,Philips,6999,4.6,20,airfryer.jpg
+20,Mixer Grinder,Home,Prestige,3999,4.5,25,mixer.jpg
+21,Smartphone,Electronics,Samsung,18999,4.7,35,smartphone.jpg
+22,Tablet,Electronics,Lenovo,15999,4.5,22,tablet.jpg
+23,Monitor,Electronics,LG,12999,4.6,18,monitor.jpg
+24,Printer,Electronics,HP,7999,4.4,15,printer.jpg
+25,Wireless Earbuds,Electronics,Realme,2499,4.5,55,earbuds.jpg
+26,Travel Bag,Accessories,American Tourister,3499,4.7,28,travelbag.jpg
+27,Wallet,Accessories,Fastrack,799,4.3,75,wallet.jpg
+28,Perfume,Beauty,Denver,999,4.2,60,perfume.jpg
+29,Hair Dryer,Beauty,Philips,1999,4.5,30,hairdryer.jpg
+30,Face Wash,Beauty,Himalaya,299,4.4,120,facewash.jpg

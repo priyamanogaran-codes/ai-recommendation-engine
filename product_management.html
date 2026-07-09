@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Product Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    {% include "admin_sidebar.html" %}
+
+    <div class="content">
+
+        <div class="top-bar">
+
+            <h1>📦 Product Management</h1>
+
+            <a href="/add-product" class="add-btn">
+
+                ➕ Add Product
+
+            </a>
+
+        </div>
+        <form method="GET" class="search-box">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="🔍 Search Product"
+        value="{{ request.args.get('search','') }}"
+    >
+
+    <select name="category">
+
+        <option value="All">All Categories</option>
+
+        {% for category in categories %}
+
+        <option
+            value="{{ category }}"
+            {% if request.args.get('category') == category %}selected{% endif %}
+        >
+            {{ category }}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+    <button type="submit">
+
+        Search
+
+    </button>
+
+</form>
+<br>
+
+        <table>
+
+            <tr>
+
+                <th>Image</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+
+            </tr>
+
+            {% for product in products %}
+
+            <tr>
+
+                <td>
+
+                    <img src="{{ url_for('static', filename='images/' + product.Image) }}"
+                         width="60">
+
+                </td>
+
+                <td>{{ product.ProductName }}</td>
+
+                <td>{{ product.Category }}</td>
+
+                <td>{{ product.Brand }}</td>
+
+                <td>₹ {{ product.Price }}</td>
+
+                <td>
+
+{% if product.Stock < 10 %}
+
+<span class="low-stock">
+
+🔴 {{ product.Stock }} (Low Stock)
+
+</span>
+
+{% else %}
+
+<span class="in-stock">
+
+🟢 {{ product.Stock }}
+
+</span>
+
+{% endif %}
+
+</td>
+
+                <td>
+
+                    <a href="/edit-product/{{ product.ProductID }}">✏️</a>
+
+                    &nbsp;&nbsp;
+
+                    <a href="/delete-product/{{ product.ProductID }}"
+                       onclick="return confirm('Delete this product?')">
+
+                        🗑️
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

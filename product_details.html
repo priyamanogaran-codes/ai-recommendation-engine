@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{{ product.ProductName }}</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🛒 Velora</h2>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+<li><a href="/products">Products</a></li>
+<li><a href="/recommendation">Recommendation</a></li>
+<li><a href="/wishlist">Wishlist</a></li>
+<li><a href="/cart">Cart</a></li>
+
+</ul>
+
+</nav>
+
+<div class="product-details">
+
+<div class="left">
+
+<img src="{{ url_for('static', filename='images/' + product.images) }}">
+
+</div>
+
+<div class="right">
+
+<h1>{{ product.ProductName }}</h1>
+
+<h3>{{ product.Brand }}</h3>
+
+<p class="rating">
+
+⭐⭐⭐⭐⭐ {{ product.Rating }}
+
+</p>
+
+<h2 class="price">
+
+₹ {{ product.Price }}
+
+</h2>
+
+<p>
+
+<b>Category :</b>
+
+{{ product.Category }}
+
+</p>
+
+<p>
+
+<b>Stock :</b>
+
+{{ product.Stock }}
+
+Available
+
+</p>
+
+<br>
+
+<h3>Description</h3>
+
+<p>
+
+Premium quality product with excellent performance.
+
+Suitable for daily use.
+
+Best value for money.
+
+</p>
+
+<br>
+
+<a href="{{ url_for('add_to_cart', product_id=product.ProductID) }}">
+
+<button>
+
+🛒 Add To Cart
+
+</button>
+
+<hr>
+
+<h2>Customer Reviews</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="username"
+placeholder="Your Name"
+required>
+
+<input
+type="number"
+name="rating"
+min="1"
+max="5"
+placeholder="Rating"
+required>
+
+<textarea
+name="review"
+placeholder="Write Review"
+required>
+
+</textarea>
+
+<button>
+
+Submit Review
+
+</button>
+
+</form>
+
+<br>
+
+{% for r in reviews %}
+
+<div class="review-card">
+
+<h3>
+
+⭐ {{ r.Rating }}
+
+</h3>
+
+<b>{{ r.Username }}</b>
+
+<p>
+
+{{ r.Review }}
+
+</p>
+
+</div>
+
+{% endfor %}
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

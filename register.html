@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Velora | Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav>
+<h2>🛍️ Velora</h2>
+
+<ul>
+<li><a href="/">🏠 Home</a></li>
+
+<li><a href="/login">🔐 Login</a></li>
+</ul>
+</nav>
+
+<div class="login-container">
+
+<h1>Create Account</h1>
+
+<form method="POST">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}
+
+</div>
+
+</body>
+</html>

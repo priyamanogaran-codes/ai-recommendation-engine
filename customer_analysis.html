@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Customer Analysis</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🛒 Velora - Admin</h2>
+
+<ul>
+
+<li><a href="/admin">Dashboard</a></li>
+
+<li><a href="/prediction">Prediction</a></li>
+
+<li><a href="/customer-analysis">Customers</a></li>
+
+<li><a href="/product-management">Products</a></li>
+
+<li><a href="/sales-analytics">Sales</a></li>
+
+
+<li><a href="/">Logout</a></li>
+
+</ul>
+
+</nav>
+
+<div class="analysis">
+
+<h1>👥 Customer Analysis</h1>
+
+<img
+src="{{ url_for('static',filename=chart) }}"
+width="500">
+
+<div class="dashboard-cards">
+
+<div class="dash-card">
+<h2>{{ total_customers }}</h2>
+<p>Total Customers</p>
+</div>
+
+<div class="dash-card">
+<h2>{{ male }}</h2>
+<p>Male Customers</p>
+</div>
+
+<div class="dash-card">
+<h2>{{ female }}</h2>
+<p>Female Customers</p>
+</div>
+
+<div class="dash-card">
+<h2>{{ average_age }}</h2>
+<p>Average Age</p>
+</div>
+
+<div class="dash-card">
+<h2>₹{{ highest_income }}</h2>
+<p>Highest Income</p>
+</div>
+
+<div class="dash-card">
+<h2>₹{{ lowest_income }}</h2>
+<p>Lowest Income</p>
+</div>
+
+<div class="dash-card">
+<h2>₹{{ average_income }}</h2>
+<p>Average Income</p>
+</div>
+
+<div class="dash-card">
+<h2>₹{{ average_purchase }}</h2>
+<p>Average Purchase</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

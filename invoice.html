@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Velora | Invoice</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+{% include 'navbar.html' %}
+<body>
+
+<div class="invoice">
+
+<h1>🛒 Velora</h1>
+
+<h2>Invoice</h2>
+
+<hr>
+
+<p>
+
+<b>Invoice No :</b>
+
+{{ invoice }}
+
+</p>
+
+<p>
+
+<b>Date :</b>
+
+{{ date }}
+
+</p>
+
+<hr>
+
+<table>
+
+<tr>
+
+<th>Product</th>
+
+<th>Price</th>
+
+</tr>
+
+{% for item in cart_items %}
+
+<tr>
+
+<td>{{ item.ProductName }}</td>
+
+<td>₹{{ item.Price }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<hr>
+
+<h2>
+
+Grand Total : ₹{{ total }}
+
+</h2>
+
+<br>
+
+<h3>
+
+Thank You For Shopping ❤️
+
+</h3>
+
+</div>
+
+</body>
+
+</html>

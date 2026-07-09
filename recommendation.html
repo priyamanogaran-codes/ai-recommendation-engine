@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Velora | Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+<div class="recommendation-box">
+
+    <h1>✨ Product Recommendation</h1>
+
+    <p class="sub-title">
+        Find the best products based on your budget and rating.
+    </p>
+
+    <form method="POST" class="recommend-form">
+
+        <div class="input-box">
+            <label>💰 Budget</label>
+
+            <input
+                type="number"
+                name="price"
+                placeholder="Enter your budget"
+                required>
+        </div>
+
+        <div class="input-box">
+            <label>⭐ Minimum Rating</label>
+
+            <input
+                type="number"
+                step="0.1"
+                min="1"
+                max="5"
+                name="rating"
+                placeholder="4.5"
+                required>
+        </div>
+
+        <button type="submit">
+            🔍 Recommend Products
+        </button>
+
+    </form>
+
+</div>
+
+{% if recommendations %}
+
+<h2 style="text-align:center;margin-top:30px;">
+    Recommended Products
+</h2>
+
+<div class="products">
+
+{% for product in recommendations %}
+
+<div class="card">
+
+    <img src="{{ url_for('static', filename='images/' + product.Image) }}">
+
+    <h3>{{ product.ProductName }}</h3>
+
+    <p><b>Category:</b> {{ product.Category }}</p>
+
+    <p><b>Brand:</b> {{ product.Brand }}</p>
+
+    <p class="rating">⭐ {{ product.Rating }}</p>
+
+    <p>
+        <del>₹{{ product.Price + 1000 }}</del>
+        <span class="offer">₹{{ product.Price }}</span>
+    </p>
+
+    {% if product.Stock > 0 %}
+        <p style="color:green;">🟢 In Stock ({{ product.Stock }})</p>
+    {% else %}
+        <p style="color:red;">🔴 Out of Stock</p>
+    {% endif %}
+
+    <button>🛒 Add to Cart</button>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Velora | Contact Us</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+<div class="contact-container">
+
+<h1>📞 Contact Us</h1>
+
+<p>We'd love to hear from you!</p>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+{% include 'footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Velora | Wishlist</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🛍️ Velora </h2>
+
+<ul>
+
+<li><a href="/">🏠 Home</a></li>
+
+<li class="dropdown">
+
+<a href="#">🛒 Shop ▾</a>
+
+<div class="dropdown-content">
+
+<a href="/products">Products</a>
+
+<a href="/recommendation">Recommendations</a>
+
+<a href="/wishlist">Wishlist</a>
+
+</div>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">📦 Orders ▾</a>
+
+<div class="dropdown-content">
+
+<a href="/cart">Cart</a>
+
+<a href="/orders">My Orders</a>
+
+<a href="/invoice">Invoice</a>
+
+</div>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">👤 Account ▾</a>
+
+<div class="dropdown-content">
+
+{% if "user" in session %}
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/logout">🚪 Logout</a>
+
+{% else %}
+
+<a href="/login">🔐 Login</a>
+
+{% endif %}
+
+</div>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1 style="text-align:center;margin-bottom:30px;">
+
+❤️ My Wishlist
+
+</h1>
+
+<div class="products">
+
+{% for p in wishlist_items %}
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='images/' + p.Image) }}">
+<h3>{{ p.ProductName }}</h3>
+
+<p>{{ p.Brand }}</p>
+
+<h2>₹{{ p.Price }}</h2>
+
+<a href="{{ url_for('add_to_cart', product_id=p.ProductID) }}">
+
+<button>
+
+🛒 Add To Cart
+
+</button>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>

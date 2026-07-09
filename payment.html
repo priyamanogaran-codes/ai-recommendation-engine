@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Payment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;margin-top:40px;">
+
+💳 Payment
+
+</h1>
+
+<div class="payment-box">
+
+<form action="{{ url_for('place_order') }}" method="POST">
+
+<label>
+
+<input type="radio" name="payment" value="UPI" required>
+
+📱 UPI
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="radio" name="payment" value="Card">
+
+💳 Debit / Credit Card
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="radio" name="payment" value="COD">
+
+💵 Cash on Delivery
+
+</label>
+
+<br><br>
+
+<button>
+
+Place Order
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

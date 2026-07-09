@@ -1,0 +1,18 @@
+OrderID,Username,ProductID,ProductName,Price,OrderDate,Status
+1,priya,1,Wireless Headphones,2999,02-07-2026,Shipped
+2,priya,1,Wireless Headphones,2999,03-07-2026,Delivered
+3,priya,2,Smart Watch,4999,03-07-2026,Delivered
+4,priya,4,Laptop Backpack,1499,03-07-2026,Delivered
+5,priya,6,Casual Shoes,2999,03-07-2026,Shipped
+6,priya,10,Power Bank,1499,06-07-2026,Shipped
+7,priya,5,Running Shoes,3999,07-07-2026,Delivered
+8,priya,11,Wireless Mouse,899,07-07-2026,Cancelled
+9,priya,9,Sunglasses,5999,07-07-2026,Shipped
+10,priya,14,External Hard Disk,4999,07-07-2026,Delivered
+11,priya,3,Bluetooth Speaker,2499,07-07-2026,Cancelled
+12,thulir,12,Gaming Keyboard,2499,07-07-2026,Delivered
+13,thulir,13,USB Pendrive,699,07-07-2026,Shipped
+14,thulir,18,Water Bottle,599,07-07-2026,Shipped
+15,nisha,13,USB Pendrive,699,07-07-2026,Delivered
+16,nisha,1,Wireless Headphones,4500,07-07-2026,Pending
+17,priya,1,Wireless Headphones,4500,08-07-2026,Delivered

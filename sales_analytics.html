@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Sales Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    {% include "admin_sidebar.html" %}
+
+    <div class="content">
+
+        <h1>📈 Sales Analytics</h1>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <h3>Total Orders</h3>
+
+                <h2>{{ total_orders }}</h2>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Total Revenue</h3>
+
+                <h2>₹ {{ total_revenue }}</h2>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Average Order</h3>
+
+                <h2>₹ {{ average_order }}</h2>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Best Selling Product</h3>
+
+                <h2>{{ best_product }}</h2>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="analytics-chart">
+
+    <img src="{{ url_for('static', filename=chart) }}">
+
+</div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

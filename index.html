@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Velora | Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+<section class="hero">
+
+    <div class="hero-left">
+
+        <h1>
+            Smart Shopping <br>
+            Starts Here 🛍️
+        </h1>
+
+        <p>
+            Discover the best products with AI-powered recommendations,
+            personalized just for you. Shop smarter, faster, and better
+            with Velora AI.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/products">
+
+                <button class="shop-btn">
+
+                    🛒 Shop Now
+
+                </button>
+
+            </a>
+
+            <a href="/recommendation">
+
+                <button class="recommend-btn">
+
+                    🎯 Get Recommendations
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="hero-features">
+
+            <div>🤖 AI Powered</div>
+
+            <div>⭐ Top Rated</div>
+
+            <div>🚚 Fast Shopping</div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="{{ url_for('static', filename='images/hero-shopping.png') }}">
+
+    </div>
+
+</section>
+<section class="categories">
+
+    <h2>🛍 Shop by Category</h2>
+
+    <div class="category-container">
+
+        <a href="/products?category=Electronics" class="category-card">
+
+            <div class="icon">📱</div>
+
+            <h3>Electronics</h3>
+
+        </a>
+
+        <a href="/products?category=Fashion" class="category-card">
+
+            <div class="icon">👕</div>
+
+            <h3>Fashion</h3>
+
+        </a>
+
+        <a href="/products?category=Home" class="category-card">
+
+            <div class="icon">🏠</div>
+
+            <h3>Home</h3>
+
+        </a>
+
+        <a href="/products?category=Accessories" class="category-card">
+
+            <div class="icon">👜</div>
+
+            <h3>Accessories</h3>
+
+        </a>
+
+    </div>
+
+</section>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>
