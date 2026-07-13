@@ -161,19 +161,19 @@ http://127.0.0.1:5000
 
 ### 🏠 Home Page
 
-![Home](screenshots/home1.png)
+![Home](home1.png)
 
 ### 🔐 Login Page
 
-![Login](screenshots/login1.png)
+![Login](login1.png)
 
 ### 🛒 Products Page
 
-![Products](screenshots/products1.png)
+![Products](products1.png)
 
 ### 🤖 Recommendation Page
 
-![Recommendation](screenshots/recommendation1.png)
+![Recommendation](recommendation1.png)
 
 ---
 
